@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marketplace</title>
-    {{-- @vite('resources/css/app.css') --}}
+    @vite('resources/css/app.css')
     <link href="/src/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -34,17 +34,20 @@
         @else
             <a href="{{ route('login') }}">Login</a>
         @endauth
+        <a href="{{ url('/account') }}">Account</a>
     </nav>
 
     <!-- Konten halaman -->
     <main>
         @yield('content')
-    </main> --}}
+    </main>
 
     <!-- Footer -->
     <footer>
         &copy; {{ date('Y') }} Marketplace
     </footer>
+
+
 <!-- Include this script tag or install `@tailwindplus/elements` via npm: -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script> -->
 <!--

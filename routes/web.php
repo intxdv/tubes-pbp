@@ -14,3 +14,8 @@ Route::get('/products', function () {
     return view('home');
 });
 
+Route::get('/account', function () {
+    return view('account');
+});
+
+
