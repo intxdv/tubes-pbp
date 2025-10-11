@@ -5,7 +5,7 @@
         {{-- Kalau sudah login langsung redirect --}}
         <script>window.location = "{{ route('dashboard') }}";</script>
     @else
-        <h1>Login</h1>
+        
 
         @if ($errors->any())
             <div style="color:red;">
@@ -17,50 +17,31 @@
             </div>
         @endif
 
-        <!--
-  This example requires updating your template:
-
-  ```
-  <html class="h-full bg-white">
-  <body class="h-full">
-  ```
--->
-<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-  <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-    
-    <h2 class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">Sign in to your account</h2>
-  </div>
-
-  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-    <form action="#" method="POST" class="space-y-6">
-      <div>
-        <label for="email" class="block text-sm/6 font-medium text-gray-900">Email address</label>
-        <div class="mt-2">
-          <input id="email" type="email" name="email" required autocomplete="email" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
-        </div>
-      </div>
-
-      <div>
-        <div class="flex items-center justify-between">
-          <label for="password" class="block text-sm/6 font-medium text-gray-900">Password</label>
-          <div class="text-sm">
-            <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
-          </div>
-        </div>
-        <div class="mt-2">
-          <input id="password" type="password" name="password" required autocomplete="current-password" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" />
-        </div>
-      </div>
-
-      <div>
-        <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
-      </div>
-    </form>
-
-    <p class="mt-10 text-center text-sm/6 text-gray-500">
-      Belum Punya Akun? 
-      <a href="{{ route('register') }}" class="font-semibold text-indigo-600 hover:text-indigo-500">Daftar</a>
-    </p>
+   
+  `
+                          <div style="display:grid; grid-template-columns:repeat(6, 1fr); gap:32px; min-height:100vh; align-items:center; justify-content:center; background:#f3f4f6;">
+                            <div style="grid-column:3/5; max-width:370px; width:100%; background:white; border-radius:16px; box-shadow:0 4px 16px #0002; padding:32px; border:1px solid #f3f4f6; margin:auto;">
+                              <h2 style="text-align:center; font-size:1.5rem; font-weight:700; color:#2563eb; margin-bottom:24px;">Login</h2>
+                              <form action="{{ route('login.submit') }}" method="POST">
+                                @csrf
+                                <div style="margin-bottom:16px;">
+                                  <label for="email" style="font-weight:500;">Email</label>
+                                  <input type="email" name="email" id="email" style="width:100%; padding:8px; border-radius:8px; border:1px solid #ccc;">
+                                </div>
+                                <div style="margin-bottom:16px;">
+                                  <label for="password" style="font-weight:500;">Password</label>
+                                  <input type="password" name="password" id="password" style="width:100%; padding:8px; border-radius:8px; border:1px solid #ccc;">
+                                </div>
+                                <button type="submit" style="width:100%; background:#2563eb; color:white; padding:10px; border-radius:8px; font-weight:600; border:none;">Login</button>
+                              </form>
+                              <p style="margin-top:24px; text-align:center; font-size:1rem; color:#555;">
+                                Belum Punya Akun? 
+                                <a href="{{ route('register') }}" style="font-weight:600; color:#2563eb; text-decoration:none;">Daftar</a>
+                              </p>
+                            </div>
+                          </div>
+      
+    </p>  
   </div>
 </div>
 
